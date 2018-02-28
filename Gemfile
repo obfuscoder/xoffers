@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'activerecord'
+gem 'activerecord', '< 5'
 gem 'cinch'
 gem 'mysql2'
 gem 'rake'
