@@ -1,0 +1,23 @@
+%table.table.table-striped.table-bordered.table-hover.table-sm
+  %thead
+    %tr
+      %th Name
+      %th User
+      %th Status
+      %th Size
+      %th Position
+      %th %
+      %th
+  %tbody
+    - @queue.each do |entry|
+      %tr
+        %td= entry.name
+        %td= entry.user.name
+        %td= entry.status
+        %td= entry.size
+        %td= entry.position
+        %td= entry.size.present? && entry.size > 0 && entry.position.present? ? entry.position * 100 / entry.size : ''
+        %td
+          %form{ action: "/queue/#{entry.id}", method: :post }
+            %input{ type: :hidden, name: :_method, value: :DELETE }
+            %input.btn{ type: :submit, value: 'Remove' }

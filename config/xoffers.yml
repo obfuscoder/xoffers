@@ -1,0 +1,53 @@
+scenep2p:
+  servers:
+    - irc.scenep2p.net
+  channels:
+    - '#THE.SOURCE'
+abandoned-irc:
+  servers:
+    - irc.abandoned-irc.net
+  channels:
+    - '#Zombie-Warez'
+    - '#WAREZ'
+    - '#zw-chat'
+abjects:
+  servers:
+    - irc.abjects.net
+  channels:
+    - '#moviegods'
+    - '#mg-chat'
+    - '#beast-xdcc'
+    - '#beast-chat'
+    - '#tmd-moviez'
+    - '#elitewarez'
+    - '#elite-chat'
+    - '#[rm]rolys-movies'
+    - '#tmd-tvrips'
+    - '#tmd-music'
+    - '#tmd-distro'
+    - '#1warez'
+the-future-irc:
+  servers:
+    - irc.the-future-irc.com
+  channels:
+    - '#THE-FUTURE'
+ultra-warez:
+  servers:
+    - irc.iarec.net
+  channels:
+    - '#ULTRA-WAREZ'
+alphairc:
+  servers:
+    - irc.alphairc.com
+  channels:
+    - '#MASTERWAREZ'
+    - '#Hidd3n-Zauberbude'
+criten:
+  servers:
+    - irc.criten.net
+  channels:
+    - '#elitewarez'
+    - '#elite-chat'
+    - '#Batcave'
+    - '#masterwarez'
+    - '#0day-mp3s'

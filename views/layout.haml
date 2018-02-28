@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous")
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    %title XOFFERS
+  %body
+    %nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      .container
+        %a.navbar-brand(href="/") XOFFERS
+        .collapse.navbar-collapse
+          %ul.navbar-nav.mr-auto
+            %li.nav-item
+              %a.nav-link(href="/") Home
+            %li.nav-item
+              %a.nav-link(href="/queue") Queue
+            %li.nav-item
+              %a.nav-link(href="/job") Job
+          %form.form-inline.my-2.my-lg-0
+            %input.form-control.mr-sm-2(type="text" name="s" value=@s placeholder="Search" aria-label="Search")
+    =yield

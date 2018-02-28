@@ -1,0 +1,28 @@
+%p= @stats.map { |k, v| "#{v} #{k}" }.join(', ')
+- if @results.present?
+  %h2 Results
+  %form(action="/queue" method="post")
+    %input{ type: :hidden, name: :s, value: @s }
+    %table.table.table-condensed.table-striped.table-bordered.table-hover.table-sm
+      %thead
+        %tr
+          %th Name
+          %th Size
+          %th Gets
+          %th User
+          %th Slots
+          %th Speed
+          %th Last update
+          %th
+      %tbody
+        - @results.each do |result|
+          %tr{ class: (result.user.online ? (result.user.passive ? 'table-warning' : '') : 'table-danger') }
+            %td= result.name
+            %td= result.size
+            %td= result.download_count
+            %td= result.user.name
+            %td= "#{result.user.open_slot_count}/#{result.user.total_slot_count}"
+            %td= "#{result.user.current_speed}/#{result.user.max_speed}"
+            %td= result.updated_at
+            %td
+              %button.btn.btn-success.btn-sm{ type: :submit, name: :q, value: result.id } Enqueue
