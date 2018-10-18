@@ -52,6 +52,12 @@ def enqueue(task)
   end
 end
 
+def cleanup
+  Pack.delete_all(['updated_at < ?', 1.month.ago])
+  User.delete_all(['updated_at < ?', 1.month.ago])
+rescue ActiveRecord::ActiveRecordError
+end
+
 DL_QUEUES = {}
 
 Network.all.each do |network|
@@ -283,8 +289,7 @@ get '/' do
 end
 
 get '/cleanup' do
-  Pack.delete_all(['updated_at < ?', 1.month.ago])
-  User.delete_all(['updated_at < ?', 1.month.ago])
+  cleanup
   redirect "/", 303
 end
 
