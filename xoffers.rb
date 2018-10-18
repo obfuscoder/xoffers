@@ -282,6 +282,12 @@ get '/' do
   haml :index
 end
 
+get '/cleanup' do
+  Pack.delete_all(['updated_at < ?', 1.month.ago])
+  User.delete_all(['updated_at < ?', 1.month.ago])
+  redirect "/", 303
+end
+
 post '/queue' do
   pack = Pack.find params['q']
   Download.create! name: pack.name, user: pack.user

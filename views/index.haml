@@ -1,4 +1,6 @@
-%p= @stats.map { |k, v| "#{v} #{k}" }.join(', ')
+%p
+  = @stats.map { |k, v| "#{v} #{k}" }.join(', ')
+  %a(href="/cleanup") Cleanup
 - if @results.present?
   %h2 Results
   %form(action="/queue" method="post")
